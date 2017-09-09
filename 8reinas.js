@@ -15,10 +15,6 @@ $(document).ready(function() {
 	 		}
 	}
 
-	//f[0][0] = 2;
-	//f[0][1] = 2;
-	//f[0][2] = 2;
-
 	//2. recorro el array para incluir las reinas
 	for (i=0;i<iMax;i++) {
 			for (j=0;j<jMax;j++) {
@@ -48,7 +44,7 @@ $(document).ready(function() {
 		//cruz derecha abajo
 		df = i;
 		dc = j;
-		while(df<7 && dc<7){
+		while(df<(iMax-1) && dc<(jMax-1)){
 			df++;
 			dc++;
 			f[df][dc] = 2;
@@ -56,7 +52,7 @@ $(document).ready(function() {
 		//cruz izquierda abajo
 		df = i;
 		dc = j;
-		while(df<7 && dc>0){
+		while(df<(iMax-1) && dc>0){
 			df++;
 			dc--;
 			f[df][dc] = 2;
@@ -64,7 +60,7 @@ $(document).ready(function() {
 		//cruz derecha arriba
 		df = i;
 		dc = j;
-		while(df>0 && dc<7){
+		while(df>0 && dc<(jMax-1)){
 			df--;
 			dc++;
 			f[df][dc] = 2;
