@@ -19,7 +19,10 @@ $(document).ready(function() {
 	for (i=0;i<iMax;i++) {
 			for (j=0;j<jMax;j++) {
 				//si encuentra un cero, es por que hay espacio para una reina
-				if (f[i][j] == 0) {
+				// if (f[i][j] == 0) {
+				// 	espaciosreina();
+				// }
+				if (i==3 && j==4) {
 					espaciosreina();
 				}
 	 		}
@@ -31,7 +34,7 @@ $(document).ready(function() {
 	 		}
 	 		//hacemos un salto de línea para que se vea como una matriz
 	 		document.writeln("<br>");
-	}alert("");
+	}
 
 	function espaciosreina(){				
 		//hago ciclos para llenar los 4 cruces con el número 2 (restricciones)
@@ -45,33 +48,33 @@ $(document).ready(function() {
 		//cruz derecha abajo
 		df = i;
 		dc = j;
-		for(rc=i;rc<(jMax-1);rc++){
-			df = df+1;
-			dc = dc+1;
+		while(df<7 && dc<7){
+			df++;
+			dc++;
 			f[df][dc] = 2;
 		}
 		//cruz izquierda abajo
 		df = i;
 		dc = j;
-		for(rc=j;rc>0;rc--){
-			df = df+1;
-			dc = dc-1;
+		while(df<7 && dc>0){
+			df++;
+			dc--;
 			f[df][dc] = 2;
 		}
 		//cruz derecha arriba
 		df = i;
 		dc = j;
-		for(rf=i;rf>0;rf--){
-			df = df-1;
-			dc = dc+1;
+		while(df>0 && dc<7){
+			df--;
+			dc++;
 			f[df][dc] = 2;
 		}
 		//cruz izquierda arriba
 		df = i;
 		dc = j;
-		for(rf=i;rf>0;rf--){
-			df = df-1;
-			dc = dc-1;
+		while(df>0 && dc>0){
+			df--;
+			dc--;
 			f[df][dc] = 2;
 		}
 		//finalmente vuelvo e indico como 1 la reina y sumo cantidad reinas
