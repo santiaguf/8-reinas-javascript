@@ -15,16 +15,17 @@ $(document).ready(function() {
 	 		}
 	}
 
+	//f[0][0] = 2;
+	//f[0][1] = 2;
+	//f[0][2] = 2;
+
 	//2. recorro el array para incluir las reinas
 	for (i=0;i<iMax;i++) {
 			for (j=0;j<jMax;j++) {
 				//si encuentra un cero, es por que hay espacio para una reina
-				// if (f[i][j] == 0) {
-				// 	espaciosreina();
-				// }
-				if (i==3 && j==4) {
-					espaciosreina();
-				}
+				 if (f[i][j] == 0) {
+				 	espaciosreina();
+				 }
 	 		}
 	}
 	// 3. mostramos el array
@@ -44,7 +45,6 @@ $(document).ready(function() {
 	   		//lena columnas
 	   		f[rc][j] = 2;
 		}
-		console.log("terminé la cruz de la reina"+i+" "+j);
 		//cruz derecha abajo
 		df = i;
 		dc = j;
